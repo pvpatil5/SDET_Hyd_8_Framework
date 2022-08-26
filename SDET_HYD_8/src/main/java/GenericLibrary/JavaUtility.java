@@ -6,7 +6,7 @@ public class JavaUtility {
 
 	/**
 	 * author Soumya
-	 * @return
+	 * @return random integer number
 	 */
 	public static int generateRandomNumber()
 	{
@@ -14,5 +14,6 @@ public class JavaUtility {
 		int random = r.nextInt(2000);
 		return random;
 	}
-
+	
+	
 }
