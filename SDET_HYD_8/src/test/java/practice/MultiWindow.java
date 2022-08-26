@@ -54,14 +54,16 @@ public class MultiWindow {
 		for(String id : window_ids)
 		{
 			String title=	driver.switchTo().window(id).getTitle();
-			if(title.equals("Mobile Phones: Buy New Mobiles Online at Best Prices in India | Buy Cell Phones Online - Amazon.in"))
+			if(!title.equals("Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in"))
 			{
-				break;
+
+				driver.close();
 			}
+			
 		}
 
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//img[@src='https://images-na.ssl-images-amazon.com/images/G/31/img21/Wireless/katariy/Category_page/march/spritesingle_2_2._CB625084132_.jpg']")).click();
+		//		Thread.sleep(2000);
+		//		driver.findElement(By.xpath("//img[@src='https://images-na.ssl-images-amazon.com/images/G/31/img21/Wireless/katariy/Category_page/march/spritesingle_2_2._CB625084132_.jpg']")).click();
 
 
 
