@@ -10,40 +10,25 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import GenericLibrary.ExcelFileUtility;
-import GenericLibrary.JSONFileUtility;
-import GenericLibrary.JavaUtility;
-import GenericLibrary.PropertyFileUtility;
-import GenericLibrary.WebDriverUtility;
-import ObjectRepository.CreateOrganisationPage;
-import ObjectRepository.HomePageClass;
-import ObjectRepository.LoginClass;
-import ObjectRepository.OrganisationInfoPage;
-import ObjectRepository.OrganisationPage;
+import com.crm.Vtiger.GenericUtils.BaseClass;
+import com.crm.Vtiger.GenericUtils.ExcelFileUtility;
+import com.crm.Vtiger.GenericUtils.JSONFileUtility;
+import com.crm.Vtiger.GenericUtils.JavaUtility;
+import com.crm.Vtiger.GenericUtils.PropertyFileUtility;
+import com.crm.Vtiger.GenericUtils.WebDriverUtility;
+import com.crm.Vtiger.ObjectRepository.CreateOrganisationPage;
+import com.crm.Vtiger.ObjectRepository.HomePageClass;
+import com.crm.Vtiger.ObjectRepository.LoginClass;
+import com.crm.Vtiger.ObjectRepository.OrganisationInfoPage;
+import com.crm.Vtiger.ObjectRepository.OrganisationPage;
 
-public class CreateOrganisationWithIndustryTest {
+public class CreateOrganisationWithIndustryTest extends BaseClass {
 
 	@Test
 	public void createOrgWithIndus() throws Throwable
 	{
-		WebDriverUtility wUtil=new WebDriverUtility();
-		
-		JSONFileUtility jUtil=new JSONFileUtility();
-		String URL = jUtil.jsonFileUtil("url");
-		String UN = jUtil.jsonFileUtil("username");
-		String pwd = jUtil.jsonFileUtil("password");
-		
-		ExcelFileUtility eUtil=new ExcelFileUtility();
 		String orgName = eUtil.readDataFromExcel("Sheet1", 4, 1)+JavaUtility.generateRandomNumber();
 		String indType = eUtil.readDataFromExcel("Sheet1", 4, 2);
-		
-		WebDriver driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.get(URL);
-
-		LoginClass lc=new LoginClass(driver);
-		lc.setLogin(UN,pwd);
 
 		HomePageClass hp=new HomePageClass(driver);
 		hp.clickOnOrgLink();
@@ -56,10 +41,6 @@ public class CreateOrganisationWithIndustryTest {
 
 		OrganisationInfoPage oip=new OrganisationInfoPage(driver);
 		oip.verifyOrgName();
-
-		hp.setLogout(driver);
-		Thread.sleep(5000);
-		driver.close();
 	}
 
 }

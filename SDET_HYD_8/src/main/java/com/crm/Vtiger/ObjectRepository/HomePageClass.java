@@ -1,4 +1,4 @@
-package ObjectRepository;
+package com.crm.Vtiger.ObjectRepository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import GenericLibrary.WebDriverUtility;
+import com.crm.Vtiger.GenericUtils.WebDriverUtility;
 
 public class HomePageClass {
 

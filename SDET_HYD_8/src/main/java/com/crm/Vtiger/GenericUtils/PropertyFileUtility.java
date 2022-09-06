@@ -1,4 +1,4 @@
-package GenericLibrary;
+package com.crm.Vtiger.GenericUtils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -11,35 +11,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import GenericLibrary.ExcelFileUtility;
-import GenericLibrary.PropertyFileUtility;
-import GenericLibrary.WebDriverUtility;
-import ObjectRepository.ContactsPage;
-import ObjectRepository.CreateContactPage;
-import ObjectRepository.HomePageClass;
-import ObjectRepository.LoginClass;
+import com.crm.Vtiger.GenericUtils.BaseClass;
+import com.crm.Vtiger.GenericUtils.ExcelFileUtility;
+import com.crm.Vtiger.GenericUtils.PropertyFileUtility;
+import com.crm.Vtiger.GenericUtils.WebDriverUtility;
+import com.crm.Vtiger.ObjectRepository.ContactsPage;
+import com.crm.Vtiger.ObjectRepository.CreateContactPage;
+import com.crm.Vtiger.ObjectRepository.HomePageClass;
+import com.crm.Vtiger.ObjectRepository.LoginClass;
 
-public class CreateContactWithOrgTest {
+public class CreateContactWithOrgTest extends BaseClass{
 
 	@Test
 	public void createConWithOrg() throws Throwable
 	{
-		WebDriverUtility wUtil=new WebDriverUtility();
-		PropertyFileUtility pUtil=new PropertyFileUtility();
-		String URL = pUtil.readDataFromPropertyFile("url");
-		String UN = pUtil.readDataFromPropertyFile("username");
-		String pwd = pUtil.readDataFromPropertyFile("password");
-		
-		ExcelFileUtility eUtil=new ExcelFileUtility();
 		String lastName = eUtil.readDataFromExcel("Sheet1", 7, 1);
-		
-		WebDriver driver=new ChromeDriver();
-		wUtil.maximizeWindow(driver);
-		wUtil.waitForPageLoad(driver);
-		driver.get(URL);
-
-		LoginClass lc=new LoginClass(driver);
-		lc.setLogin(UN,pwd);
 		
 		HomePageClass hp=new HomePageClass(driver);
 		hp.getConLink().click();
@@ -68,9 +54,6 @@ public class CreateContactWithOrgTest {
 		{
 			System.out.println("lastname is not available");
 		}
-		
-		hp.setLogout(driver);
-		driver.close();
 	}
 	
 }

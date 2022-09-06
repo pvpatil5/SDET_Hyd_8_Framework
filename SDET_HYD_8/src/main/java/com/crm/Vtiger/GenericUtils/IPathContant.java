@@ -1,4 +1,4 @@
-package GenericLibrary;
+package com.crm.Vtiger.GenericUtils;
 
 public interface IPathContant {
 	

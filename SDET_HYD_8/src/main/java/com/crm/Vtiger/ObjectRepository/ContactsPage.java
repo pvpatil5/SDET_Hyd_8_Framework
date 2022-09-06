@@ -1,4 +1,4 @@
-package ObjectRepository;
+package com.crm.Vtiger.ObjectRepository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
