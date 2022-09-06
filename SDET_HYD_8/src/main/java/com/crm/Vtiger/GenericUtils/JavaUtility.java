@@ -1,4 +1,4 @@
-package GenericLibrary;
+package com.crm.Vtiger.GenericUtils;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ public class JavaUtility {
 
 	/**
 	 * author Soumya
-	 * @return random integer number
+	 * @return
 	 */
 	public static int generateRandomNumber()
 	{
@@ -14,6 +14,5 @@ public class JavaUtility {
 		int random = r.nextInt(2000);
 		return random;
 	}
-	
-	
+
 }
