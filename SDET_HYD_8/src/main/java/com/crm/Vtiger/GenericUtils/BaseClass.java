@@ -1,5 +1,9 @@
 package com.crm.Vtiger.GenericUtils;
 
+import java.io.File;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,13 +13,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Parameters;
-
-import com.beust.jcommander.Parameter;
 import com.crm.Vtiger.ObjectRepository.HomePageClass;
 import com.crm.Vtiger.ObjectRepository.LoginClass;
-
-import junit.framework.Assert;
+import com.google.common.io.Files;
 
 public class BaseClass {
 
@@ -79,5 +79,15 @@ public class BaseClass {
 	{
 		System.out.println("=========close connection with DB=========");
 	}
-
+	
+	public static String takingScreenshot(String name) throws Throwable
+	{
+		TakesScreenshot ts = (TakesScreenshot)sdriver;
+		File src = ts.getScreenshotAs(OutputType.FILE);
+		String path="./screenshot/"+name+".png";
+		File dest=new File(path);
+		Files.copy(src, dest);
+		return path;
+	}
+	
 }

@@ -1,6 +1,5 @@
 package com.crm.Vtiger.GenericUtils;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashMap;
 

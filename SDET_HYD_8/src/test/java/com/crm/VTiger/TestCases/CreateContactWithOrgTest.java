@@ -1,25 +1,16 @@
 package com.crm.VTiger.TestCases;
 
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.Vtiger.GenericUtils.BaseClass;
-import com.crm.Vtiger.GenericUtils.ExcelFileUtility;
-import com.crm.Vtiger.GenericUtils.PropertyFileUtility;
-import com.crm.Vtiger.GenericUtils.WebDriverUtility;
 import com.crm.Vtiger.ObjectRepository.ContactsPage;
 import com.crm.Vtiger.ObjectRepository.CreateContactPage;
 import com.crm.Vtiger.ObjectRepository.HomePageClass;
-import com.crm.Vtiger.ObjectRepository.LoginClass;
 
+
+@Listeners(com.crm.Vtiger.GenericUtils.ListenerImp.class )
 public class CreateContactWithOrgTest extends BaseClass{
 
 	@Test

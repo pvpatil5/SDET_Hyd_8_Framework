@@ -6,26 +6,37 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.crm.VTiger.TestCases.DemoTest">
+      <class name="com.crm.VTiger.TestCases.CreateOrganisationWithIndustryTest">
         <methods>
-          <include name="logout"/>
           <include name="setLogin"/>
-          <include name="closeBrowser"/>
-          <include name="createConnWithDB"/>
-          <include name="orgTest"/>
           <include name="closeConnWithDB"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="createOrgWithIndus"/>
+          <include name="createConnWithDB"/>
           <include name="openBrowser"/>
         </methods>
-      </class> <!-- com.crm.VTiger.TestCases.DemoTest -->
+      </class> <!-- com.crm.VTiger.TestCases.CreateOrganisationWithIndustryTest -->
+      <class name="com.crm.VTiger.TestCases.CreateContactWithOrgTest">
+        <methods>
+          <include name="setLogin"/>
+          <include name="closeConnWithDB"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="createConWithOrg"/>
+          <include name="createConnWithDB"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- com.crm.VTiger.TestCases.CreateContactWithOrgTest -->
       <class name="com.crm.VTiger.TestCases.CreateOrganisationTest">
         <methods>
-          <include name="logout"/>
           <include name="setLogin"/>
-          <include name="closeBrowser"/>
-          <include name="createConnWithDB"/>
           <include name="closeConnWithDB"/>
-          <include name="createOrg"/>
+          <include name="closeBrowser"/>
+          <include name="logout"/>
+          <include name="createConnWithDB"/>
           <include name="openBrowser"/>
+          <include name="createOrg"/>
         </methods>
       </class> <!-- com.crm.VTiger.TestCases.CreateOrganisationTest -->
     </classes>

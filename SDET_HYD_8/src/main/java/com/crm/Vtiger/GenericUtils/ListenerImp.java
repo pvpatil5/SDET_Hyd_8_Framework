@@ -1,70 +1,77 @@
 package com.crm.Vtiger.GenericUtils;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Date;
-import java.util.logging.FileHandler;
-
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.google.common.io.Files;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ListenerImp implements ITestListener{
 
+	ExtentTest test;
+	ExtentReports	reports;
 	public void onTestStart(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		test=reports.createTest(result.getMethod().getMethodName());
+
 	}
 
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		test.log(Status.PASS, result.getMethod().getMethodName()+" GOT PASSED");
+
 	}
 
 	public void onTestFailure(ITestResult result) {
-		
-		String currentDate = new Date().toString().replace(":", "_").replace(" ", "_");
-		String failedtestcase=result.getMethod().getMethodName();
-		System.out.println(failedtestcase);
-		EventFiringWebDriver ev=new EventFiringWebDriver(BaseClass.sdriver);
-		File srcImg = ev.getScreenshotAs(OutputType.FILE);
-		
-		File destImg=new File("./screenshot/"+failedtestcase+currentDate+".png");
+
+		test.log(Status.FAIL, result.getMethod().getMethodName()+" GOT failed");
+		test.log(Status.FAIL, result.getThrowable());
 		try {
-			FileUtils.copyFile(srcImg, destImg);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
+			String path = BaseClass.takingScreenshot(result.getMethod().getMethodName());
+			test.addScreenCaptureFromPath(path);
+		} catch (Throwable e) {
 			e.printStackTrace();
 		}
-		
+
+
+
 	}
 
 	public void onTestSkipped(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+		test.log(Status.SKIP, result.getMethod().getMethodName());
+
+
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		// TODO Auto-generated method stub
-		
+
+
 	}
 
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
-		
+	
+		ExtentSparkReporter reporter = new ExtentSparkReporter(IPathContant.EXTENTREPORTPATH+JavaUtility.datee());
+		reporter.config().setDocumentTitle("VTIGER");
+		reporter.config().setTheme(Theme.STANDARD);
+		reporter.config().setReportName("smoke");
+
+		reports= new ExtentReports();
+		reports.attachReporter(reporter);
+		reports.setSystemInfo("browser version", "105");
+		reports.setSystemInfo("repoter name", "pavan");
+		reports.setSystemInfo("Build No", "5.3.1");
+		reports.setSystemInfo("OS", "Windows_11");
+
 	}
 
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
-		
+		reports.flush();
+
 	}
 
-	
+
 
 }
