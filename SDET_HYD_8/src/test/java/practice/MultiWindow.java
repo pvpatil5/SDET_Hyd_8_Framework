@@ -4,7 +4,6 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.Set;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 public class MultiWindow {
 
 	public static void main(String[] args) throws AWTException, InterruptedException {
+
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://amazon.in");
