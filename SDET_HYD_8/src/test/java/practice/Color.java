@@ -11,6 +11,8 @@ public class Color {
 		driver.get("https://facebook.com");
 		String color = driver.findElement(By.xpath("//h2[@class='_8eso']")).getCssValue("color");
 		System.out.println(color);
+		
+		System.out.println("Color");
 	}
 
 }
