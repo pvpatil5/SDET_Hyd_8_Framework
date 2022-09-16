@@ -20,7 +20,7 @@ public class CreateOrganisationWithIndustryTest extends BaseClass {
 		hp.clickOnOrgLink();
 		
 		OrganisationPage op=new OrganisationPage(driver);
-		//op.getCreateOrgIcon().click();
+		op.getCreateOrgIcon().click();
 		
 		CreateOrganisationPage cp=new CreateOrganisationPage(driver);
 		cp.createOrgwithIndustry(orgName, indType);

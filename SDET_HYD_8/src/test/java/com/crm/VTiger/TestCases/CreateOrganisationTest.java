@@ -24,6 +24,7 @@ public class CreateOrganisationTest extends BaseClass {
 		op.getCreateOrgIcon().click();
 		
 		CreateOrganisationPage cp=new CreateOrganisationPage(driver);
+		Thread.sleep(2000);
 		cp.createOrg(orgName);
 		
 		OrganisationInfoPage oip=new OrganisationInfoPage(driver);
