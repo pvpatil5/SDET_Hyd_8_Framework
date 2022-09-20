@@ -53,7 +53,7 @@ public class ListenerImp implements ITestListener{
 
 	public void onStart(ITestContext context) {
 	
-		ExtentSparkReporter reporter = new ExtentSparkReporter(IPathContant.EXTENTREPORTPATH+JavaUtility.datee());
+		ExtentSparkReporter reporter = new ExtentSparkReporter(IPathContant.EXTENTREPORTPATH+JavaUtility.datee()+ ".html");
 		reporter.config().setDocumentTitle("VTIGER");
 		reporter.config().setTheme(Theme.STANDARD);
 		reporter.config().setReportName("smoke");

@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\AMAR-G\AppData\Local\Temp\testng-eclipse--706197827\testng-customsuite.xml</span>
+                    <span>C:\Users\Pavan\AppData\Local\Temp\testng-eclipse-1847670696\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +104,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.crm.Vtiger.GenericUtils.JavaUtility" class="method navigator-link" hash-for-method="datee">datee</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="practice.MMT_DataProvider" class="method navigator-link" hash-for-method="data(MAA, GOI)">data(MAA, GOI)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="practice.MMT_DataProvider" class="method navigator-link" hash-for-method="data(HYD, BOM)">data(HYD, BOM)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="practice.MMT_DataProvider" class="method navigator-link" hash-for-method="data(BLR, BOM)">data(BLR, BOM)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,14 +132,31 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.crm.Vtiger.GenericUtils.JavaUtility</span>
+              <span class="class-name">practice.MMT_DataProvider</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="datee">
-                  </a> <!-- datee -->
-                  <span class="method-name">datee</span>
+                  <a name="data(MAA, GOI)">
+                  </a> <!-- data(MAA, GOI) -->
+                  <span class="method-name">data</span>
+                  <span class="parameters">(MAA, GOI)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="data(HYD, BOM)">
+                  </a> <!-- data(HYD, BOM) -->
+                  <span class="method-name">data</span>
+                  <span class="parameters">(HYD, BOM)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="data(BLR, BOM)">
+                  </a> <!-- data(BLR, BOM) -->
+                  <span class="method-name">data</span>
+                  <span class="parameters">(BLR, BOM)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +164,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\AMAR-G\AppData\Local\Temp\testng-eclipse--706197827\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Pavan\AppData\Local\Temp\testng-eclipse-1847670696\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +173,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.crm.Vtiger.GenericUtils.JavaUtility&quot;/&gt;
+      &lt;class name=&quot;practice.MMT_DataProvider&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -186,16 +213,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'datee')
-data.setCell(0, 2, 'com.crm.Vtiger.GenericUtils.JavaUtility')
-data.setCell(0, 3, 77);
+data.setCell(0, 1, 'data')
+data.setCell(0, 2, 'practice.MMT_DataProvider')
+data.setCell(0, 3, 27402);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'data')
+data.setCell(1, 2, 'practice.MMT_DataProvider')
+data.setCell(1, 3, 26892);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'data')
+data.setCell(2, 2, 'practice.MMT_DataProvider')
+data.setCell(2, 3, 26381);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 77 ms</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -221,10 +256,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.crm.Vtiger.GenericUtils.JavaUtility</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">practice.MMT_DataProvider</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">datee</span>
+                <span class="method-name">data(BLR, BOM)</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">data(MAA, GOI)</span>
+                <span class="method-start">27409 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">data(HYD, BOM)</span>
+                <span class="method-start">54302 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
