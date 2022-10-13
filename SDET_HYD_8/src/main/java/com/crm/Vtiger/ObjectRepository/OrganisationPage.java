@@ -9,7 +9,7 @@ public class OrganisationPage {
 
 	@FindBy(xpath="//img[@src='themes/softed/images/btnL3Add.gif']")
 	private WebElement createOrgIcon;
-	
+
 	public OrganisationPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
@@ -18,7 +18,4 @@ public class OrganisationPage {
 	public WebElement getCreateOrgIcon() {
 		return createOrgIcon;
 	}
-	
-	
-
 }

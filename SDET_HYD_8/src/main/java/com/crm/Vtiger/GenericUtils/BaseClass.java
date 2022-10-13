@@ -17,6 +17,8 @@ import com.crm.Vtiger.ObjectRepository.HomePageClass;
 import com.crm.Vtiger.ObjectRepository.LoginClass;
 import com.google.common.io.Files;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseClass {
 
 	public WebDriverUtility wUtil=new WebDriverUtility();
@@ -39,10 +41,12 @@ public class BaseClass {
 		String BROWSER = pUtil.readDataFromPropertyFile("browser");
 		if(BROWSER.equals("chrome"))
 		{
+			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
 		else
 		{
+			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
 		wUtil.maximizeWindow(driver);
