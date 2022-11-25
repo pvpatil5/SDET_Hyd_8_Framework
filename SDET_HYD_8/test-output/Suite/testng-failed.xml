@@ -6,39 +6,17 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.crm.VTiger.TestCases.CreateOrganisationWithIndustryTest">
+      <class name="com.crm.VTiger.TestCases.OrganisationTest">
         <methods>
           <include name="setLogin"/>
           <include name="closeConnWithDB"/>
-          <include name="closeBrowser"/>
           <include name="logout"/>
-          <include name="createOrgWithIndus"/>
-          <include name="createConnWithDB"/>
-          <include name="openBrowser"/>
-        </methods>
-      </class> <!-- com.crm.VTiger.TestCases.CreateOrganisationWithIndustryTest -->
-      <class name="com.crm.VTiger.TestCases.CreateContactWithOrgTest">
-        <methods>
-          <include name="setLogin"/>
-          <include name="closeConnWithDB"/>
           <include name="closeBrowser"/>
-          <include name="logout"/>
-          <include name="createConWithOrg"/>
           <include name="createConnWithDB"/>
-          <include name="openBrowser"/>
-        </methods>
-      </class> <!-- com.crm.VTiger.TestCases.CreateContactWithOrgTest -->
-      <class name="com.crm.VTiger.TestCases.CreateOrganisationTest">
-        <methods>
-          <include name="setLogin"/>
-          <include name="closeConnWithDB"/>
-          <include name="closeBrowser"/>
-          <include name="logout"/>
-          <include name="createConnWithDB"/>
-          <include name="openBrowser"/>
           <include name="createOrg"/>
+          <include name="openBrowser"/>
         </methods>
-      </class> <!-- com.crm.VTiger.TestCases.CreateOrganisationTest -->
+      </class> <!-- com.crm.VTiger.TestCases.OrganisationTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

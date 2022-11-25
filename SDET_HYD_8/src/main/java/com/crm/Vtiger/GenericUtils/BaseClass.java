@@ -88,7 +88,7 @@ public class BaseClass {
 	{
 		TakesScreenshot ts = (TakesScreenshot)sdriver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		String path="./screenshot/"+name+".png";
+		String path=System.getProperty("user.dir")+"/screenshot/"+name+".png";
 		File dest=new File(path);
 		Files.copy(src, dest);
 		return path;

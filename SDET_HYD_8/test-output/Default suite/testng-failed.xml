@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practice.Ex_Report">
+      <class name="com.crm.VTiger.TestCases.CreateOrganisationTest">
         <methods>
-          <include name="generateReport"/>
+          <include name="setLogin"/>
+          <include name="closeConnWithDB"/>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="createConnWithDB"/>
+          <include name="openBrowser"/>
+          <include name="createOrg"/>
         </methods>
-      </class> <!-- practice.Ex_Report -->
+      </class> <!-- com.crm.VTiger.TestCases.CreateOrganisationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
